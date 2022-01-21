@@ -29,7 +29,41 @@ function onMIDIFailure(error) {
   console.log("No access to MIDI devices or your browser doesn't support WebMIDI API. Please use WebMIDIAPIShim " + e);
 }
 
-function onMIDIMessage(message) {
-  data = message.data  // This gives us our [command/channel, note, velocity] data
-  console.log('MIDI data', data); // MIDI data [144, 63, 73]
+function onMIDIMessage(event) {
+  // data = message.data  // This gives us our [command/channel, note, velocity] data
+  // console.log('MIDI data', data); // MIDI data [144, 63, 73]
+
+    data = event.data,
+    cmd = data[0] >> 4,
+    channel = data[0] & 0xf,
+    type = data[0] & 0xf0,  // Channel agnostic message type
+    note = data[1],
+    velocity = data[2];
+    // With pressure and tilt off
+    // Note off: 128, cmd: 8
+    // Note on: 144, cmd: 9
+    // Pressure/tilt on
+    // Pressure: 176, cmd: 11
+    // Bend: 224, cmd: 14
+
+  switch (type) {
+    case 144: // noteOn message
+      noteOn(note, velocity);
+      break;
+    case 128: // noteOff message
+      noteOff(note, velocity);
+      break;
+  }
+
+  function noteOn(midiNote, velocity) {
+    player(midiNote, velocity);
+  }
+
+  function noteOff(midiNote, velocity) {
+    player(midiNote, velocity);
+  }
+
+  function player(note, velocity) {
+    }
+
 }
