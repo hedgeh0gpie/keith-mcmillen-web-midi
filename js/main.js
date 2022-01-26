@@ -1,4 +1,5 @@
 let midi, data;
+let keyData = document.getElementById('key_data');
 
 if (navigator.requestMIDIAccess) {
   navigator.requestMIDIAccess({
@@ -46,6 +47,9 @@ function onMIDIMessage(event) {
     // Pressure: 176, cmd: 11
     // Bend: 224, cmd: 14
 
+  //console.log('data', data, 'cmd', cmd, 'channel', channel);
+  logger(keyData, 'key data', data);
+
   switch (type) {
     case 144: // noteOn message
       noteOn(note, velocity);
@@ -53,6 +57,8 @@ function onMIDIMessage(event) {
     case 128: // noteOff message
       noteOff(note, velocity);
       break;
+
+
   }
 
   function noteOn(midiNote, velocity) {
@@ -65,5 +71,12 @@ function onMIDIMessage(event) {
 
   function player(note, velocity) {
     }
+
+    // Utility Functions
+  function logger(container, label, data) {
+    messages = label + " [channel: " + (data[0] & 0xf) + ", cmd: " + (data[0] >> 4) + ", type: " + (data[0] & 0xf0) + " , note: " + data[1] + " , velocity: " + data[2] + "]";
+    console.log(messages);
+  }
+
 
 }
