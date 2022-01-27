@@ -47,8 +47,11 @@ function onMIDIMessage(event) {
     // Pressure: 176, cmd: 11
     // Bend: 224, cmd: 14
 
-  //console.log('data', data, 'cmd', cmd, 'channel', channel);
-  logger(keyData, 'key data', data);
+  // Filter out the MiniNova mystery persistent MIDI messages. I believe it must be the MIDI clock??
+  if (channel !== 8 && cmd !== 15 && type !== 240) {
+    //console.log('data', data, 'cmd', cmd, 'channel', channel);
+    logger(keyData, 'key data', data);
+  }
 
   switch (type) {
     case 144: // noteOn message
