@@ -77,9 +77,20 @@ function onMIDIMessage(event) {
 
     // Utility Functions
   function logger(container, label, data) {
-    messages = label + " [channel: " + (data[0] & 0xf) + ", cmd: " + (data[0] >> 4) + ", type: " + (data[0] & 0xf0) + " , note: " + data[1] + ", velocity: " + data[2] + "]";
+    messages = label + " [channel: " + (data[0] & 0xf) + ", cmd: " + (data[0] >> 4) + ", type: " + (data[0] & 0xf0) + " , MIDI note: " + data[1] + ", note: " + midiNoteToPitch(data) + ", velocity: " + data[2] + "]";
     console.log(messages);
   }
+
+  function midiNoteToPitch(data) {
+    let midiNote = data[1];
+    let pitch;
+    switch(midiNote) {
+      case 60:
+        pitch = "C4 (middle C)"
+    }
+    return pitch;
+  }
+
 
 
 }
