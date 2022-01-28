@@ -77,7 +77,7 @@ function onMIDIMessage(event) {
 
     // Utility Functions
   function logger(container, label, data) {
-    messages = label + " [channel: " + (data[0] & 0xf) + ", cmd: " + (data[0] >> 4) + ", type: " + (data[0] & 0xf0) + " , note: " + data[1] + " , velocity: " + data[2] + "]";
+    messages = label + " [channel: " + (data[0] & 0xf) + ", cmd: " + (data[0] >> 4) + ", type: " + (data[0] & 0xf0) + " , note: " + data[1] + ", velocity: " + data[2] + "]";
     console.log(messages);
   }
 
