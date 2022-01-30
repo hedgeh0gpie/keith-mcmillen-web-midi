@@ -81,6 +81,42 @@ function onMIDIMessage(event) {
     let midiNote = data[1];
     let pitch;
     switch (midiNote) {
+      case 36:
+        pitch = "C2";
+        break;
+      case 37:
+        pitch = "C#2/Db2";
+        break;
+      case 38:
+        pitch = "D2";
+        break;
+      case 39:
+        pitch = "D#2/Eb2";
+        break;
+      case 40:
+        pitch = "E2";
+        break;
+      case 41:
+        pitch = "F2";
+        break;
+      case 42:
+        pitch = "F#2/Gb2";
+        break;
+      case 43:
+        pitch = "G2";
+        break;
+      case 44:
+        pitch = "G#2/Ab2";
+        break;
+      case 45:
+        pitch = "A2";
+        break;
+      case 46:
+        pitch = "A#2/Bb2";
+        break;
+      case 47:
+        pitch = "B2";
+        break;
       case 48:
         pitch = "C3";
         break;
