@@ -261,7 +261,30 @@ function onMIDIMessage(event) {
       case 119:
         pitch = "B8";
         break;
-
+      case 120:
+        pitch = "C9";
+        break;
+      case 121:
+        pitch = "C#9/Db9";
+        break;
+      case 122:
+        pitch = "D9";
+        break;
+      case 123:
+        pitch = "D#9/Eb9";
+        break;
+      case 124:
+        pitch = "E9";
+        break;
+      case 125:
+        pitch = "F9";
+        break;
+      case 126:
+        pitch = "F#9/Gb9";
+        break;
+      case 127:
+        pitch = "G9";
+        break;
     }
     return pitch;
   }
