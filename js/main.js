@@ -81,6 +81,33 @@ function onMIDIMessage(event) {
     let midiNote = data[1];
     let pitch;
     switch (midiNote) {
+      case 12:
+        pitch = "C0";
+        break;
+      case 13:
+        pitch = "C#0/Db0";
+        break;
+      case 14:
+        pitch = "D0";
+        break;
+      case 15:
+        pitch = "D#0/Eb0";
+        break;
+      case 16:
+        pitch = "E0";
+        break;
+      case 17:
+        pitch = "F0";
+        break;
+      case 18:
+        pitch = "F#0/Gb0";
+        break;
+      case 19:
+        pitch = "G0";
+        break;
+      case 20:
+        pitch = "G#0/Ab0";
+        break;
       case 21:
         pitch = "A0";
         break;
