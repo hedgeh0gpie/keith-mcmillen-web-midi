@@ -87,7 +87,20 @@ function onMIDIMessage(event) {
       68: "G#4/Ab4",
       69: "A4",
       70: "A#4/Bb4",
-      71: "B4"
+      71: "B4",
+      72: "C5",
+      73: "C#5/Db5",
+      74: "D5",
+      75: "D#5/Eb5",
+      76: "E5",
+      77: "F5",
+      78: "F#5/Gb5",
+      79: "G5",
+      80: "G#5/Ab5",
+      81: "A5",
+      82: "A#5/Bb5",
+      83: "B5"
+
     };
     let midiNote = data[1];
     let pitch;
