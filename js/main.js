@@ -77,6 +77,18 @@ function onMIDIMessage(event) {
   // Utility Functions
   function midiNoteToPitch(data) {
     const midiObjectTest = {
+      0: "C-1",
+      1: "C#-1/Db-1",
+      2: "D-1",
+      3: "D#-1/Eb-1",
+      4: "E-1",
+      5: "F-1",
+      6: "F#-1/Gb-1",
+      7: "G-1",
+      8: "G#-1/Ab-1",
+      9: "A-1",
+      10: "A#-1/Bb-1",
+      11: "B-1",
       12: "C0",
       13: "C#0/Db0",
       14: "D0",
