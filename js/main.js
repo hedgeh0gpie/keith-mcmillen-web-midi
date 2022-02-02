@@ -77,6 +77,18 @@ function onMIDIMessage(event) {
   // Utility Functions
   function midiNoteToPitch(data) {
     const midiObjectTest = {
+      48: "C3",
+      49: "C#3/Db3",
+      50: "D3",
+      51: "D#3/Eb3",
+      52: "E3",
+      53: "F3",
+      54: "F#3/Gb3",
+      55: "G3",
+      56: "G#3/Ab3",
+      57: "A3",
+      58: "A#3/Bb3",
+      59: "B3",
       60: "C4 (middle C)",
       61: "C#4/Db4",
       62: "D4",
@@ -144,9 +156,8 @@ function onMIDIMessage(event) {
       125: "F9",
       126: "F#9/Gb9",
       127: "G9"
-
-
     };
+
     let midiNote = data[1];
     let pitch;
     return midiObjectTest[midiNote];
